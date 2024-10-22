@@ -1,7 +1,22 @@
-import { Text, View } from "react-native";
-import { Link } from 'expo-router';
+import { Text, View, Button } from "react-native";
+import { Link, useRouter } from 'expo-router';
 
 export default function User() {
+
+  const router = useRouter();
+
+  //dismiss the current screen
+  const handleDissmiss = (count: number) => {
+    if(router.canDismiss()) {
+      router.dismiss(count);
+    }
+  }
+  
+  //dismiss all screens
+  const handleDismissAll = () => {
+    router.dismissAll();
+  }
+
   return (
     <View
       style={{
@@ -12,9 +27,14 @@ export default function User() {
     >
       <Text>user page</Text>
 
-      <Link style={{ marginTop: 10 }} href="/about">Redirect to Home</Link>
+      <Link style={{ marginVertical: 10 }} href="/about">Redirect to Home</Link>
 
 
+      <Button title="Dismiss" onPress={() => handleDissmiss(1)} />
+      
+      <View style={{ marginVertical: 5 }} />
+
+      <Button title="Dismiss All" onPress={() => handleDismissAll()} />
     </View>
   );
 }
