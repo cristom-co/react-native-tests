@@ -1,11 +1,6 @@
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { Drawer } from 'expo-router/drawer';
 
-
-import { createDrawerNavigator } from '@react-navigation/drawer';
-import { createStackNavigator } from '@react-navigation/stack';
-
-
 const DrawerNavigator = () => {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
@@ -29,20 +24,20 @@ const DrawerNavigator = () => {
   )
 }
 
-const RootStackTmp = () => {
-  const RootStack = createStackNavigator();
+// const RootStackTmp = () => {
+//   const RootStack = createStackNavigator();
 
-  return (
-    <RootStack.Navigator>
-      <RootStack.Group>
-        <RootStack.Screen name="Home" component={null} />
-      </RootStack.Group>
-      <RootStack.Group screenOptions={{ presentation: 'modal' }}>
-        <RootStack.Screen name="MyModal" component={null} />
-      </RootStack.Group>
-    </RootStack.Navigator>
-  );
-}
+//   return (
+//     <RootStack.Navigator>
+//       <RootStack.Group>
+//         <RootStack.Screen name="Home" component={null} />
+//       </RootStack.Group>
+//       <RootStack.Group screenOptions={{ presentation: 'modal' }}>
+//         <RootStack.Screen name="MyModal" component={null} />
+//       </RootStack.Group>
+//     </RootStack.Navigator>
+//   );
+// }
 
 
 
